@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+section {
+    display: inline-block;
+    width: 50%;
+    padding: 120px 20px 0 20px;
+}
+section span a {
+    padding: 20px;
+}
+section h2 {
+    padding: 20px 0;
+}
+body aside img {
+    margin-left: 57%;
+    text-align: center;
+    margin-top: -500px;   
+    width: 500px;
+    height: 500px;
+    border-radius: 250px;
+    
+}
+ol li {
+    padding: 5px 20px;
+}
