@@ -3,50 +3,63 @@
     padding: 0;
 }
 
-nav {
+.mainPageHeader{
+    position: fixed;
     width: 100%;
     height: 100px;
     background-color: #2980b9;
-    position: fixed;
-    
 }
+
+/* --- Относно използването на чисти селектори по таг, ти писах в предното домашно. 
+        Единственото което искам да добавя тук, е че когато имаш такъв CSS като този за header-а, 
+        койтой бива зареден във всички файлове, трябва да допълнително да подсигуриш, че няма стилове, които да пречат не само на текущите страници, но и на потенциални нови. --- */
+nav {
+    width: 900px;
+    height: 100px;
+    margin: auto; /* margin:auto центрира display:block елементи (<nav> е block по подразбиране) */
+}
+
+.navInnerWrapper{
+    text-align: center; /* --- Центрираме всички inline елементи вътре във контейнера. --- */
+    margin-top: 40px;   /* --- 40px отгоре за да отлепим текста от горния ръб на контейнера. --- */
+}
+
 nav .logo {
-    margin-left: 200px;
-    text-align: center;
-    top: 12.5px;
+    /* text-align: center;  */ /* --- text-align:center се поставя на елемент, за да центрираш текста, inline или inline-block елементите във него. В случая нямаш нищо, което да се намира във img тага --- */
+    top: 12px;    /* --- Не използвай дробни пиксели. Пикселите трябва да са винаги цели, инак може да доведе до размазване в някой браузъри или при конкретни резолюции. --- */
     position: relative;
-    color: white;
+    /* color: white; */ /* --- Color се однася само за текст, на картинка не прави нищо този стил --- */
+    
+
+
+    position: absolute; /* --- Така позиционираме логото абсолютно спрямо горния контейнер (<nav>) и подсигуряваме, че няма да пречи на позицията на линковете. ---*/
 
 }
 
-nav .nav1 {
-    margin-left: 20%;
+/* --- Когато имаш няколко повтарящи се стила, можеш да обединиш селекторите за общите стилове, и да оставиш отделно само различните --- */
+
+.navItem{
     text-align: center;
     position: relative;
-    bottom: 12.5px;
+    /* bottom: 12px; */ /* --- Нямаме нужда от това, тъй като позиционираме елементите вртикално чрез parent елемента (по-горния) --- */
     text-decoration-line: none;
     color: white;
+    margin-right: 60px;
+}
+
+/* --- Тъй като ще центрираме текста със text-alight:center; нямаме нужда от всички тези margin стилове --- */
+/* nav .nav1 {
+    margin-left: 20%;
 }
 nav .nav2 {
     margin-left: 50px;
-    text-align: center;
-    position: relative;
-    bottom: 12.5px;
-    text-decoration-line: none;
-    color: white;
 }
 nav .nav3 {
     margin-left: 50px;
-    text-align: center;
-    position: relative;
-    bottom: 12.5px;
-    text-decoration-line: none;
-    color: white;    
-}
- nav a:hover {
+} */
+
+nav a:hover {
+    /* Интересен подбор на цветове :) */
     background: rgb(45, 241, 6) ;
     color: rgb(247, 10, 30);
-   
-
-
 }
